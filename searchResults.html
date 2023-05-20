@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-toggle"></div>
+    <a class="navbar-brand" href="#">Learning Lounge</a>
+    <div class="search-form">
+      <input type="text" class="search-bar" placeholder="Search...">
+      <button class="search-button" onclick="navigateToNewScreen()">Search</button>
+    </div>
+    <button class="username-button">Username</button>
+    <button class="cart-button">Cart</button>
+  </nav>
+
+  <div class="content">
+    <h2 class="section-title">Resultados da pesquisa</h2>
+    <div class="segmented-control">
+      <button class="segmented-control-item selected" onclick="toggleSelected(this)">Professores</button>
+      <button class="segmented-control-item" onclick="toggleSelected(this)">Materiais</button>
+      <button class="segmented-control-item" onclick="toggleSelected(this)">Disciplinas</button>
+
+      <div class="dropdown">
+        <button class="dropdown-button">Order by: Classification</button>
+        <div class="dropdown-content">
+            <a href="#">Item 1</a>
+            <a href="#">Item 2</a>
+            <a href="#">Item 3</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-button">Filters</button>
+        <div class="dropdown-content">
+            <a href="#">Item 1</a>
+            <a href="#">Item 2</a>
+            <a href="#">Item 3</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="results">
+        <div class="item-list" onclick="goToProfessor()">
+            <div class="item">
+            <img src="joaopedro.png" alt="Image 1" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 2" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 3" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+        </div>
+        <div class="item-list" style="margin-top: 20px;">
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 1" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 2" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 3" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+        </div>
+        <div class="item-list" style="margin-top: 20px;">
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 1" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 2" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+            <div class="item">
+            <img src="nayeon.jpg" alt="Image 3" class="item-image">
+            <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+            </div>
+        </div>
+        </div>
+        <div class="pagination">
+            <button class="pagination-button active">1</button>
+            <button class="pagination-button">2</button>
+            <button class="pagination-button">3</button>
+            <button class="pagination-button">4</button>
+            <button class="pagination-button">5</button>
+          </div>
+    </div>
+
+      
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="company-name">Learning Lounge</h3>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Information</h4>
+        <p class="phone-number">Phone: +1 123 456 7890</p>
+        <p class="address">Address: 123 Main Street, City, Country</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Your page content goes here -->
+
+    <script src="script.js"></script>
+</body>
+</html>

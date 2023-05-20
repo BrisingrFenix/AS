@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 400px; /* Set the desired height */
+      background-color: black;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-toggle"></div>
+    <a class="navbar-brand" href="#">Learning Lounge</a>
+    <div class="search-form">
+      <input type="text" class="search-bar" placeholder="Search...">
+      <button class="search-button" onclick="navigateToNewScreen()">Search</button>
+    </div>
+    <button class="username-button">Username</button>
+    <button class="cart-button">Cart</button>
+  </nav>
+
+  <div class="content">
+    <div class="hierarchy">Matemática  >  Matemática A</div>
+    <div class="title" style="color: white;">Professor João Pedro</div>
+    <div class="subtitle" style="color: white">Licenciatura em Matemática</div>
+    <div class="info-section">
+        <div class="horizontal-divider">
+            <div class="info-part image-part">
+                <img src="joaopedro.png" alt="Profile Image">
+            </div>
+            <div class="info-part">
+                <div class="details-section">
+                    <h3 class="section-title">Detalhes</h3>
+                    <div class="details-text">
+                        <p>Preço: 20€ / hora</p>
+                        <p>Atende: Online</p>
+                        <p>Idiomas: Português, Inglês</p>
+                        <p>Qualificações: Licenciatura </p>
+                        <p>Avaliação: 4,8 (23 reviews)</p>
+                    </div>
+                    <div class="details-buttons">
+                        <button class="button">Button 1</button>
+                        <button class="button">Button 2</button>
+                    </div>
+                </div>
+            </div>
+              
+            <div class="info-part">
+                <div class="availability">
+                    <h3 class="section-title">Disponível</h3>
+                    <div class="availability-buttons">
+                        <button class="availability-button yellow">Mon</button>
+                        <button class="availability-button red">Tue</button>
+                        <button class="availability-button green">Wed</button>
+                        <button class="availability-button green">Thu</button>
+                        <button class="availability-button yellow">Fri</button>
+                        <button class="availability-button gray">Sat</button>
+                        <button class="availability-button gray">Sun</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <h3 class="section-title">Materiais de estudo</h3>
+        <div class="item-list-material">
+            <div class="item-material">
+              <div class="item-title-material purple-material">Solução exame matemática A 20/21</div>
+              <div class="item-details-material">
+                <h4 class="item-subtitle-material">Item 1 Subtitle</h4>
+                <p class="item-text-material">Item 1 Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="item-buttons-material">
+                <button class="button-material">Preview</button>
+                <button class="button-material">Add</button>
+              </div>
+            </div>
+            <div class="item-material">
+              <div class="item-title-material purple-material">VideoAula sobre limites</div>
+              <div class="item-details-material">
+                <h4 class="item-subtitle-material">Item 2 Subtitle</h4>
+                <p class="item-text-material">Item 2 Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="item-buttons-material">
+                <button class="button-material">Preview</button>
+                <button class="button-material">Add</button>
+              </div>
+            </div>
+            <div class="item-material">
+              <div class="item-title-material purple-material">Ficha ex. inequação c/soluções</div>
+              <div class="item-details-material">
+                <h4 class="item-subtitle-material">Item 3 Subtitle</h4>
+                <p class="item-text-material">Item 3 Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="item-buttons-material">
+                <button class="button-material">Preview</button>
+                <button class="button-material">Add</button>
+              </div>
+            </div>
+          </div>
+          
+          
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="company-name">Learning Lounge</h3>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Information</h4>
+        <p class="phone-number">Phone: +1 123 456 7890</p>
+        <p class="address">Address: 123 Main Street, City, Country</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Your page content goes here -->
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-toggle"></div>
+    <a class="navbar-brand" href="#">Learning Lounge</a>
+    <div class="search-form">
+      <input type="text" class="search-bar" placeholder="Search...">
+      <button class="search-button" onclick="navigateToNewScreen()">Search</button>
+    </div>
+    <button class="username-button">Username</button>
+    <button class="cart-button">Cart</button>
+  </nav>
+
+  <div class="content">
+    <h2 class="section-title">Disciplinas</h2>
+    <div class="segmented-control">
+      <button class="segmented-control-item selected" onclick="toggleSelected(this)">Matematica</button>
+      <button class="segmented-control-item" onclick="toggleSelected(this)">Portugues</button>
+      <button class="segmented-control-item" onclick="toggleSelected(this)">Física</button>
+      <button class="segmented-control-item" onclick="toggleSelected(this)">Biologia</button>
+      <button class="segmented-control-item" onclick="toggleSelected(this)">+</button>
+    </div>
+
+    <div class="item-list">
+        <div class="item">
+          <img src="joaopedro.png" alt="Image 1" class="item-image">
+          <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+        </div>
+        <div class="item">
+          <img src="nayeon.jpg" alt="Image 2" class="item-image">
+          <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+        </div>
+        <div class="item">
+          <img src="nayeon.jpg" alt="Image 3" class="item-image">
+          <p class="item-text">Item Text Item Text Item Text Item Text Item Text Item Text Item Text Item Text </p>
+        </div>
+      </div>
+
+      <div class="item-section">
+        <h2 class="section-title">TOP materiais de estudo</h2>
+        <div class="item-list">
+          <div class="item2">
+            <p class="item-title">Exame 20/21 resolvido</p>
+            <p class="item-content">Item Text Item Text Item Text Item Text Item Text Item</p>
+          </div>
+          <div class="item2">
+            <p class="item-title">Exame 20/21 resolvido</p>
+            <p class="item-content">Item Text Item Text Item Text Item Text Item Text Item</p>
+          </div>
+          <div class="item2">
+            <p class="item-title">Exame 20/21 resolvido</p>
+            <p class="item-content">Item Text Item Text Item Text Item Text Item Text Item</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Sobre nós</h2>
+        <div class="about-us">
+          <div class="about-us-image">
+            <img src="teacher.png" alt="About Us Image">
+          </div>
+          <div class="about-us-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum ipsum ac leo condimentum, vel ultrices massa congue. Sed in enim at turpis lacinia vulputate. Nulla facilisi. Mauris blandit malesuada est, sit amet semper risus bibendum vitae. Curabitur maximus eros a varius malesuada.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum ipsum ac leo condimentum, vel ultrices massa congue. Sed in enim at turpis lacinia vulputate. Nulla facilisi. Mauris blandit malesuada est, sit amet semper risus bibendum vitae. Curabitur maximus eros a varius malesuada.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum ipsum ac leo condimentum, vel ultrices massa congue. Sed in enim at turpis lacinia vulputate. Nulla facilisi. Mauris blandit malesuada est, sit amet semper risus bibendum vitae. Curabitur maximus eros a varius malesuada.</p>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="company-name">Learning Lounge</h3>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Information</h4>
+        <p class="phone-number">Phone: +1 123 456 7890</p>
+        <p class="address">Address: 123 Main Street, City, Country</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Your page content goes here -->
+
+    <script src="script.js"></script>
+</body>
+</html>
