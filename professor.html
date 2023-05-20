@@ -18,13 +18,12 @@
 <body>
   <nav class="navbar">
     <div class="navbar-toggle"></div>
-    <a class="navbar-brand" href="#">Learning Lounge</a>
+    <a class="navbar-brand" href="#"><img src="./icons/logo.png" alt=""></a>
     <div class="search-form">
-      <input type="text" class="search-bar" placeholder="Search...">
-      <button class="search-button" onclick="navigateToNewScreen()">Search</button>
+      <input id="searchInput" class="search-bar" type="text" placeholder="O que queres aprender hoje?" oninput="search()">
     </div>
     <button class="username-button">Username</button>
-    <button class="cart-button">Cart</button>
+    <button class="cart-button"></button>
   </nav>
 
   <div class="content">
@@ -47,8 +46,8 @@
                         <p>Avaliação: 4,8 (23 reviews)</p>
                     </div>
                     <div class="details-buttons">
-                        <button class="button">Button 1</button>
-                        <button class="button">Button 2</button>
+                        <button class="button">Contacto</button>
+                        <button class="button">Marcar aula</button>
                     </div>
                 </div>
             </div>
@@ -72,35 +71,35 @@
         <h3 class="section-title">Materiais de estudo</h3>
         <div class="item-list-material">
             <div class="item-material">
-              <div class="item-title-material purple-material">Solução exame matemática A 20/21</div>
+              <div class="item-title-material">Solução exame matemática A 20/21</div>
               <div class="item-details-material">
                 <h4 class="item-subtitle-material">Item 1 Subtitle</h4>
                 <p class="item-text-material">Item 1 Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
               <div class="item-buttons-material">
-                <button class="button-material">Preview</button>
+                <button class="button-preview">Preview</button>
                 <button class="button-material">Add</button>
               </div>
             </div>
             <div class="item-material">
-              <div class="item-title-material purple-material">VideoAula sobre limites</div>
+              <div class="item-title-material">VideoAula sobre limites</div>
               <div class="item-details-material">
                 <h4 class="item-subtitle-material">Item 2 Subtitle</h4>
                 <p class="item-text-material">Item 2 Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
               <div class="item-buttons-material">
-                <button class="button-material">Preview</button>
+                <button class="button-preview">Preview</button>
                 <button class="button-material">Add</button>
               </div>
             </div>
             <div class="item-material">
-              <div class="item-title-material purple-material">Ficha ex. inequação c/soluções</div>
+              <div class="item-title-material">Ficha ex. inequação c/soluções</div>
               <div class="item-details-material">
                 <h4 class="item-subtitle-material">Item 3 Subtitle</h4>
                 <p class="item-text-material">Item 3 Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
               <div class="item-buttons-material">
-                <button class="button-material">Preview</button>
+                <button class="button-preview">Preview</button>
                 <button class="button-material">Add</button>
               </div>
             </div>
