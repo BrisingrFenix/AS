@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
   <nav class="navbar">
     <div class="navbar-toggle"></div>
-    <a class="navbar-brand" href="index.html"><img src="./icons/logo.png" alt=""></a>
+    <a class="navbar-brand" href="../index.html"><img src="../images/icons/logo.png" alt=""></a>
     <div class="search-form">
       <input id="searchInput" class="search-bar" type="text" placeholder="O que queres aprender hoje?" oninput="search()">
-      <button class="search-button" onclick="navigateToNewScreen('searchResults.html')">Search</button>
+      <button class="search-button" onclick="navigateToNewScreen('./searchResults.html')">Search</button>
     </div>
     <button class="username-button">Username</button>
-    <button class="cart-button" onclick="navigateToNewScreen('cart.html')" style="background-color: white;"></button>
+    <button class="cart-button" onclick="navigateToNewScreen('./cart.html')" style="background-color: white;"></button>
     <p id="nItems" style="margin-left: 5px;">0</p>
     <p style="margin-left: 2px;">items</p>
   </nav>
@@ -37,7 +37,7 @@
                     <button class="custom-button">Prosseguir para pagamento</button>
                     <hr style="color: black; height: 1px; width: 100%; margin: 20px auto;">
                     <p>Tens um cupão? Valida-o no checkout e aproveita o teu desconto</p>
-                    <img src="icons/payments.png">
+                    <img src="../images/icons/payments.png">
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
   </footer>
   <!-- Your page content goes here -->
 
-    <script src="script.js"></script>
-    <script src="payment.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/payment.js"></script>
 </body>
 </html>

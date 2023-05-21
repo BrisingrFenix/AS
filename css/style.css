@@ -80,7 +80,7 @@ footer {
 .navbar-toggle {
   width: 20px;
   height: 20px;
-  background-image: url(./icons/menu.png);
+  background-image: url(../images/icons/menu.png);
   background-repeat: no-repeat;
   background-position: 0%;
   background-size: cover;
@@ -131,7 +131,7 @@ footer {
 }
 
 .cart-button {
-  background-image: url(./icons/shopping-cart.png);
+  background-image: url(../images/icons/shopping-cart.png);
   background-size: cover;
   border: none;
   padding: 5px 20px;
@@ -148,6 +148,7 @@ footer {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .section-subTitle {
   font-size: 18px;
   font-weight: normal;
@@ -271,7 +272,7 @@ footer {
 }
 
 .pagination-button.active {
-  background-color: #4CAF50;
+  background-color: #6C63FF;
   color: white;
 }
 
