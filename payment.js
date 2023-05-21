@@ -1,9 +1,7 @@
 var itemListHtml = ""
 var total = 0.0
-console.log(cart);
 for (itemIdx in cart){
     item = cart[itemIdx]
-    console.log(item);
     itemListHtml = itemListHtml + `
         <div class="item-cart" style="width: 400px; margin-top: 30px;">
             <img src="icons/remove_shopping_cart.png" alt="Item 1 Image" width="40" height="40"  onclick="removeFromCart('${item[4]}')">
@@ -21,7 +19,6 @@ document.getElementById("itemList").innerHTML = itemListHtml
 document.getElementById("nArtigos").innerHTML = String(cart.length) + " artigos"
 document.getElementById("subtotal").innerHTML = "Subtotal do carrinho: " + String(total) + "€"
 document.getElementById("total").innerHTML = "Total: " + String(total) + "€"
-console.log(cart);
 
 function removeFromCart(id){
     for (itemIdx in cart){
