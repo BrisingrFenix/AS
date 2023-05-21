@@ -9,20 +9,22 @@
     <a class="navbar-brand" href="index.html"><img src="./icons/logo.png" alt=""></a>
     <div class="search-form">
       <input id="searchInput" class="search-bar" type="text" placeholder="O que queres aprender hoje?" oninput="search()">
-      <button class="search-button" onclick="navigateToNewScreen()">Search</button>
+      <button class="search-button" onclick="navigateToNewScreen('searchResults.html')">Search</button>
     </div>
     <button class="username-button">Username</button>
-    <button class="cart-button"></button>
+    <button class="cart-button" onclick="navigateToNewScreen('cart.html')" style="background-color: white;"></button>
+    <p id="nItems" style="margin-left: 5px;">0</p>
+    <p style="margin-left: 2px;">items</p>
   </nav>
 
   <div class="content">
     <h2 class="section-title" style="margin: 0;">Carrinho</h2>
-    <h2 class="section-subTitle" style="margin: 0;">2 artigos</h2>
+    <h2 class="section-subTitle" style="margin: 0;" id="nArtigos">2 artigos</h2>
 
     <div class="section">
         <div class="about-us">
           <div class="about-us-image">
-            <div class="item-list-material">
+            <div class="item-list-material" id="itemList">
                 <div class="item-cart" style="width: 400px; margin-top: 30px;">
                     <img src="icons/remove_shopping_cart.png" alt="Item 1 Image" width="40" height="40">
                     <div class="item-details-material" style="margin-top: 0; margin-bottom: 0; margin-right: 10px; padding: 0;">
@@ -50,10 +52,10 @@
           </div>
             <div class="about-us-text">
                 <div class="info-section">
-                    <p style="margin: 0;">Subtotal carrinho: €35,00</p>
+                    <p style="margin: 0;" id="subtotal">Subtotal carrinho: €35,00</p>
                     <p style="margin: 0;">Custos de envio: €0,00</p>
                     <hr style="color: black; height: 1px; width: 100%; margin: 20px auto;">
-                    <p style="margin: 0;">Total: €35,00</p>
+                    <p style="margin: 0;" id="total">Total: €35,00</p>
                     <button class="custom-button">Prosseguir para pagamento</button>
                     <hr style="color: black; height: 1px; width: 100%; margin: 20px auto;">
                     <p>Tens um cupão? Valida-o no checkout e aproveita o teu desconto</p>
@@ -79,5 +81,6 @@
   <!-- Your page content goes here -->
 
     <script src="script.js"></script>
+    <script src="payment.js"></script>
 </body>
 </html>

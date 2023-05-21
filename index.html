@@ -9,10 +9,12 @@
     <a class="navbar-brand" href="index.html"><img src="./icons/logo.png" alt=""></a>
     <div class="search-form">
       <input id="searchInput" class="search-bar" type="text" placeholder="O que queres aprender hoje?" oninput="search()">
-      <button class="search-button" onclick="navigateToNewScreen()">Search</button>
+      <button class="search-button" onclick="navigateToNewScreen('searchResults.html')">Search</button>
     </div>
     <button class="username-button">Username</button>
-    <button class="cart-button"></button>
+    <button class="cart-button" onclick="navigateToNewScreen('cart.html')" style="background-color: white;"></button>
+    <p id="nItems" style="margin-left: 5px;">0</p>
+    <p style="margin-left: 2px;">items</p>
   </nav>
 
   <div class="content">
