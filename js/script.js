@@ -55,14 +55,14 @@
     var input = document.getElementById("searchInput");
     searchText = input.value;
     localStorage.setItem('searchText', JSON.stringify(searchText));
-    navigateToNewScreen('page/searchResults.html')
+    navigateToNewScreen('./searchResults.html')
   }
 
   function searchNoIndex() {
     var input = document.getElementById("searchInput");
     searchText = input.value;
     localStorage.setItem('searchText', JSON.stringify(searchText));
-    navigateToNewScreen('/page/searchResults.html')
+    navigateToNewScreen('./searchResults.html')
   }
 
   
