@@ -21,7 +21,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 9999;
@@ -90,8 +90,8 @@
     <div class="navbar-toggle"></div>
     <a class="navbar-brand" href="../index.html"><img src="../images/icons/logo.png" alt=""></a>
     <div class="search-form">
-      <input id="searchInput" class="search-bar" type="text" placeholder="O que queres aprender hoje?" oninput="search()">
-      <button class="search-button" onclick="navigateToNewScreen('./searchResults.html')">Search</button>
+      <input id="searchInput" class="search-bar" type="text" placeholder="O que queres aprender hoje?">
+      <button class="search-button" onclick="searchNoIndex()">Search</button>
     </div>
     <button class="username-button">Username</button>
     <button class="cart-button" onclick="navigateToNewScreen('./cart.html')" style="background-color: white;"></button>
@@ -164,22 +164,21 @@
     </div>
 
     <div class="hierarchy">Matemática  >  Matemática A</div>
-    <div class="title" style="color: white;">Professor João Pedro</div>
-    <div class="subtitle" style="color: white">Licenciatura em Matemática</div>
+    <div class="title" style="color: white;" id="profName">Professor João Pedro</div>
+    <div class="subtitle" style="color: white" id="profAcademy">Licenciatura em Matemática</div>
     <div class="info-section">
         <div class="horizontal-divider">
-            <div class="info-part image-part">
-                <img src="../images/joaopedro.png" alt="Profile Image">
+            <div class="info-part image-part" id="profImage">
+
             </div>
             <div class="info-part">
                 <div class="details-section">
                     <h3 class="section-title">Detalhes</h3>
                     <div class="details-text">
-                        <p>Preço: 20€ / hora</p>
-                        <p>Atende: Online</p>
-                        <p>Idiomas: Português, Inglês</p>
-                        <p>Qualificações: Licenciatura </p>
-                        <p>Avaliação: 4,8 (23 reviews)</p>
+                        <p id="profPreco"></p>
+                        <p id="profModalidade"></p>
+                        <p id="profAcademic"></p>
+                        <p id="profRating"></p>
                     </div>
                     <div class="details-buttons">
                         <button class="button">Contacto</button>
@@ -258,7 +257,9 @@
     </div>
   </footer>
 
+    <script src="../js/data.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/professor.js"></script>
+    
 </body>
 </html>
