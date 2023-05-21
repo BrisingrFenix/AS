@@ -2,6 +2,93 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <style>
+    /* CSS styles for the popup form */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      display: none;
+    }
+  
+    .popup-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 90%;
+    }
+  
+    .dropdown {
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-btn {
+    font-size: 18px;
+    padding: 6px 12px;
+    border: none;
+    background-color: #f5f5f5;
+    color: #000;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-button:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-btn {
+    background-color: #ddd;
+  }
+
+  input[type="tel"] {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .confirm-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    width: 100%;
+    background-color: #6C63FF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+</style>
+  
 </head>
 <body>
   <nav class="navbar">
@@ -18,6 +105,31 @@
   </nav>
 
   <div class="content">
+
+    <div class="popup-overlay">
+      <div class="popup-container">
+        <h2 style="font-size: 30px; margin-bottom: 20px;" id="popupTotal">Total: €35,00</h2>
+        <h3 style="font-weight: normal; font-size:20px;">Método de pagamento</h3>
+        <form id="popup-form" style="padding-top: 0px;">
+          <!-- Form fields -->
+          <div class="dropdown">
+            <img src="/images/icons/mbway.png" alt="Dropdown Image" width="50" height="25" style="margin-right: 10px;">
+            <button class="dropdown-btn">&#9660;</button>
+            <div class="dropdown-content">
+              <!-- Dropdown options -->
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+            </div>
+          </div>
+          <input type="tel" name="phone" placeholder="Phone number" required>
+          <button type="submit" class="confirm-btn">Confirmar</button>
+        </form>
+      </div>
+    </div>
+    
+      
+
     <h2 class="section-title" style="margin: 0;">Carrinho</h2>
     <h2 class="section-subTitle" style="margin: 0;" id="nArtigos">2 artigos</h2>
 
@@ -34,7 +146,7 @@
                     <p style="margin: 0;">Custos de envio: €0,00</p>
                     <hr style="color: black; height: 1px; width: 100%; margin: 20px auto;">
                     <p style="margin: 0;" id="total">Total: €35,00</p>
-                    <button class="custom-button">Prosseguir para pagamento</button>
+                    <button class="custom-button" onclick="openPopup()">Prosseguir para pagamento</button>
                     <hr style="color: black; height: 1px; width: 100%; margin: 20px auto;">
                     <p>Tens um cupão? Valida-o no checkout e aproveita o teu desconto</p>
                     <img src="../images/icons/payments.png">
@@ -42,7 +154,7 @@
             </div>
         </div>
       </div>
-  </div>
+      </div>
 
   <footer>
     <div class="footer-content">
@@ -56,7 +168,6 @@
       </div>
     </div>
   </footer>
-  <!-- Your page content goes here -->
 
     <script src="../js/script.js"></script>
     <script src="../js/payment.js"></script>

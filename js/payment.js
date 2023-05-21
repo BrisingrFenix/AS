@@ -19,6 +19,7 @@ document.getElementById("itemList").innerHTML = itemListHtml
 document.getElementById("nArtigos").innerHTML = String(cart.length) + " artigos"
 document.getElementById("subtotal").innerHTML = "Subtotal do carrinho: " + String(total) + "€"
 document.getElementById("total").innerHTML = "Total: " + String(total) + "€"
+document.getElementById("popupTotal").innerHTML = "Total: " + String(total) + "€"
 
 function removeFromCart(id) {
     for (itemIdx in cart) {
@@ -31,3 +32,24 @@ function removeFromCart(id) {
     }
 
 }
+
+const popupOverlay = document.querySelector('.popup-overlay');
+const closeBtn = document.querySelector('.close-btn');
+const popupForm = document.querySelector('#popup-form');
+
+function openPopup() {
+  popupOverlay.style.display = 'flex';
+}
+
+function closePopup() {
+  popupOverlay.style.display = 'none';
+}
+
+popupForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  closePopup();
+});
+
+closeBtn.addEventListener('click', closePopup);  
+  
+  
