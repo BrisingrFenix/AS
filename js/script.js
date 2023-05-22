@@ -1,9 +1,5 @@
   function navigateToNewScreen(page) {
-    // Perform any necessary actions before navigating
-  
-    // Redirect to the new screen
     window.location.href = page;
-    
   }
 
   function goToProfessor(){
@@ -44,11 +40,11 @@
     navigateToNewScreen('./searchResults.html')
   }
 
-  function searchNoIndex() {
+  function searchNoIndex(path) {
     var input = document.getElementById("searchInput");
     searchText = input.value;
     localStorage.setItem('searchText', JSON.stringify(searchText));
-    navigateToNewScreen('./searchResults.html')
+    navigateToNewScreen(path)
   }
 
   

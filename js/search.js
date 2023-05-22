@@ -2,12 +2,14 @@ var searchRes = []
 var selectedSegmented = "Professores"
 function searchAndShow(){
     searchRes = []
-    for(id in professores){
-        let prof = professores[id] 
+    for(idx in professores){
+        let prof = professores[idx] 
         for(ind in prof.subjects){
          let sub = prof.subjects[ind]
          if (sub.includes(searchText)){
-             searchRes.push(prof)
+            if(!searchRes.includes(prof)){
+                searchRes.push(prof)
+            }
          }
         }
      }
