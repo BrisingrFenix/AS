@@ -3,6 +3,57 @@
 <head>
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <style>
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      display: none;
+    }
+  
+    .popup-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .confirm-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    width: 100%;
+    background-color: #6C63FF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+
+    input{
+      outline: unset;
+      padding: 10px;
+      width: 160px;
+      border: 1px solid black;
+      border-radius: 20px;
+    }
+
+    select{
+      outline: unset;
+      padding: 10px;
+      width: 180px;
+      border: 1px solid black;
+      border-radius: 20px;
+    }
+
     body::before {
       content: "";
       position: absolute;
@@ -46,7 +97,7 @@
                     </div>
                     <div class="details-buttons">
                         <button class="button">Contacto</button>
-                        <button class="button">Candidate-se agora!</button>
+                        <button class="button" onclick="openPopup()">Candidate-se agora!</button>
                     </div>
                 </div>
             </div>
@@ -58,6 +109,49 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex Lorem ipsum dolor sit amet.</p>
     </div>
   </div>
+
+  <div class="content">
+    <div class="popup-overlay">
+      <div class="popup-container">
+        <h2 style="font-size: 30px; margin-bottom: 20px;">Torne-se explicador</h2>
+        <form id="popup-form" style="padding-top: 0px;">
+          <!-- Form fields -->
+          <input type="tel" name="phone" placeholder="Nome Completo" required>
+          <input type="tel" name="phone" placeholder="Data de nascimento" required>
+          <input type="tel" name="phone" placeholder="Telefone" required>
+          <input type="tel" name="phone" placeholder="Endereço" required>
+          <input type="tel" name="phone" placeholder="Cod. Postal" required>
+          <input type="tel" name="phone" placeholder="Email" required>
+          <input type="tel" name="phone" placeholder="Habilitações académicas" required>
+          <select name="Matérias" id="Matérias">
+            <option value="">Matérias que ensina</option>
+            <option value="Matemática">Matemática</option>
+            <option value="Fisica">Fisica</option>
+            <option value="Quimica">Quimica</option>
+            <option value="Português">Português</option>
+          </select>
+          <select name="Disponibilidade" id="Disponibilidade">
+            <option value="">Dias disponíveis</option>
+            <option value="Segunda">Segunda-Feira</option>
+            <option value="Terça">Terça-Feira</option>
+            <option value="Quarta">Quarta-Feira</option>
+            <option value="Quinta">Quinta-Feira</option>
+            <option value="Sexta">Sexta-Feira</option>
+            <option value="Sábado">Sábado</option>
+            <option value="Domingo">Domingo</option>
+          </select>
+          <select name="Modalidade" id="Modalidade">
+            <option value="">Modalidade</option>
+            <option value="Matemática">Online</option>
+            <option value="Fisica">Presencial</option>
+          </select>
+          <p>Upload CV <img width="13px" src="../images/icons/upload.png"></p>
+          <p>Upload carta de apresentação <img width="13px" src="../images/icons/upload.png"></p>
+          <p>Upload certificações académicas <img width="13px" src="../images/icons/upload.png"></p>
+          <button type="submit" class="confirm-btn">Registar</button>
+        </form>
+      </div>
+    </div>
 
   <footer>
     <div class="footer-content">
@@ -74,5 +168,6 @@
   <!-- Your page content goes here -->
 
     <script src="../js/script.js"></script>
+    <script src="../js/professor.js"></script>
 </body>
 </html>
