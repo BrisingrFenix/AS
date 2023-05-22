@@ -1,13 +1,3 @@
-class CartItem {
-    constructor(name, price, authorFormat, description, id) {
-        this.name = name;
-        this.price = price;
-        this.authorFormat = authorFormat;
-        this.description = description;
-        this.id = id
-    }
-}
-
 class Professor {
     constructor(name, avgRatings, subjects, since, status, noStudents, phone, academicLevel, availability, lessonType, pricePerHour, image, bio, id){
         this.name = name
@@ -26,6 +16,65 @@ class Professor {
         this.id = id
     }
 }
+
+class CartItem {
+    constructor(id, authorId, name, authorFormat, description, price){
+        this.id = id
+        this.authorId = authorId
+        this.name = name
+        this.authorFormat = authorFormat
+        this.description = description
+        this.price = price
+    }
+}
+
+let itemJoao1 = new CartItem(
+    "1",
+    "0",
+    "Solução exame matemática A 20/21",
+    "Text (PDF) - By: Professor João Pedro",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex v...",
+    "15"
+)
+let itemJoao2 = new CartItem(
+    "2",
+    "0",
+    "Solução exame matemática A 22/23",
+    "Text (PDF) - By: Professor João Pedro",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex v...",
+    "20"
+)
+let itemJoao3 = new CartItem(
+    "3",
+    "0",
+    "Ficha ex. Inequações (solução)",
+    "Text (PDF) - By: Professor João Pedro",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex v...",
+    "7"
+)
+let itemMaria1 = new CartItem(
+    "4",
+    "1",
+    "Ficha ex. Limites (solução)",
+    "Text (PDF) - By: Professora Maria Helena",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex v...",
+    "10"
+)
+let itemSusana1 = new CartItem(
+    "5",
+    "2",
+    "Video-aula sobre funções",
+    "Video (MP4) - By: Professora Susana Silva",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id dapibus justo, sit amet iaculis leo. Sed et sem faucibus, volutpat ex v...",
+    "5.50"
+)
+
+var materiais = [itemJoao1, itemJoao2, itemJoao3, itemMaria1, itemSusana1]
+localStorage.setItem('materiais', JSON.stringify(materiais));
+if (localStorage.getItem('materiais') !== null) {
+    materiais = JSON.parse(localStorage.getItem('materiais'));
+}
+console.log(materiais);
 
 const Status = {
     SUBMITTED: 'Submitted',
@@ -112,4 +161,9 @@ if (localStorage.getItem('searchText') !== null) {
 }
 console.log(searchText);
 
-
+let cart = [];
+  if (localStorage.getItem('cart') !== null) {
+    cart = JSON.parse(localStorage.getItem('cart'));
+  }
+  document.getElementById("nItems").innerHTML = cart.length;
+  console.log(cart);

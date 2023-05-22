@@ -35,21 +35,7 @@
     ]
   };
 
-  let cart = [];
-  if (localStorage.getItem('cart') !== null) {
-    cart = JSON.parse(localStorage.getItem('cart'));
-  }
-  document.getElementById("nItems").innerHTML = cart.length;
-  console.log(cart.length);
   
-  // Function to add an item to the cart
-  function addToCart(item) {
-    // Push the item to the cart array
-    cart.push(items[item]);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    document.getElementById("nItems").innerHTML = cart.length;
-    console.log(cart.length);
-  }
 
   function search() {
     var input = document.getElementById("searchInput");

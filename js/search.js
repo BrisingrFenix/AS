@@ -56,9 +56,9 @@ function toggleSelected(button) {
         selectedSegmented = "Professores"
     }
     searchAndShow()
-  }
+}
 
-  function selectProf(id){
+function selectProf(id){
     selectedProf = id
     localStorage.setItem('selectedProf', JSON.stringify(selectedProf));
     window.location.href = "./professor.html"
