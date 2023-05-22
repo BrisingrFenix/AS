@@ -16,3 +16,14 @@ function selectProf(id){
     window.location.href = "/page/professor.html"
 }
 
+function toggleSelected(button) {
+    // Remove "selected" class from all buttons
+    var buttons = document.getElementsByClassName("segmented-control-item");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("selected");
+    }
+  
+    // Add "selected" class to the clicked button
+    button.classList.add("selected");
+  }
+  
