@@ -13,7 +13,7 @@ document.getElementById("professoreList").innerHTML =  profHTML
 function selectProf(id){
     selectedProf = id
     localStorage.setItem('selectedProf', JSON.stringify(selectedProf));
-    window.location.href = "/page/professor.html"
+    window.location.href = "./page/professor.html"
 }
 
 function toggleSelected(button) {

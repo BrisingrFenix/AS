@@ -19,7 +19,7 @@ function searchAndShow(){
          if (selectedSegmented == "Professores") {
              resHtml = resHtml + `
              <div class="item" onclick="selectProf('${searchRes[i].id}')">
-                 <img src="/images/${searchRes[i].image}.png" alt="Image 1" class="item-image">
+                 <img src="../images/${searchRes[i].image}.png" alt="Image 1" class="item-image">
                  <p style="width: 100%; text-align: left; margin-left: 20px; margin-bottom: 0px; font-weight: bold;">${searchRes[i].name}</p>
                  <p style="width: 100%; text-align: left; margin-left: 20px;margin-top: 0px;">${searchRes[i].bio.substring(0, 60)}...</p>
              </div>
@@ -61,6 +61,6 @@ function toggleSelected(button) {
   function selectProf(id){
     selectedProf = id
     localStorage.setItem('selectedProf', JSON.stringify(selectedProf));
-    window.location.href = "/page/professor.html"
+    window.location.href = "./professor.html"
 }
 
