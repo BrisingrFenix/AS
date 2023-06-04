@@ -1,3 +1,40 @@
+var duracao = 0
+var lessonType = ""
+function bookLesson(){
+
+  const startTime = new Date(document.getElementById('datetime').value)
+  const endTime = new Date(startTime)
+  endTime.setHours(endTime.getHours() + parseInt(duracao))
+  const lesson = new Class(
+    "1",
+    startTime,
+    endTime,
+    "1",
+    selectedProf,
+    document.getElementById("subjectSelect").textContent.trim(),
+    identifyLessonType(lessonType)
+  )
+  console.log(lesson)
+  let price = duracao * professores[selectedProf].pricePerHour
+
+  addClassToCart(lesson, price)
+
+  classes.push(lesson)
+  localStorage.setItem('classes', JSON.stringify(classes));
+  console.log(classes);
+}
+
+function identifyLessonType(str) {
+  for (const lessonType in LessonType) {
+    if (LessonType.hasOwnProperty(lessonType)) {
+      if (LessonType[lessonType] === str) {
+        return lessonType;
+      }
+    }
+  }
+  return null; // Return null if no matching LessonType is found
+}
+
 function toggleSelected(button) {
   // Remove "selected" class from all buttons
   var buttons = document.getElementsByClassName("segmented-control-item");
@@ -28,6 +65,8 @@ popupForm.addEventListener('submit', function(event) {
   
 function selectOption(option, dropdownId) {
     document.getElementById(dropdownId).textContent = option;
+    duracao = document.getElementById("dropdown-text-2").textContent[0]
+    lessonType = document.getElementById('dropdown-text-4').textContent
   }
 
   console.log(professores);

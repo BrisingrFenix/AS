@@ -133,11 +133,7 @@
           <div class="parent" style="margin: 0px;">
             <p style="padding-right: 10px; font-weight: bold; margin: 0px;">Data/ hora: </p>
             <div class="dropdown">
-              <span id="dropdown-text-3">Select an option</span>
-              <div class="dropdown-content"  id="dataSelect">
-
-              </div>
-              <span class="dropdown-arrow">&#9660;</span>
+              <input type="datetime-local" id="datetime" name="datetime">
             </div>
           </div>
           <div class="parent" style="margin: 0px;">
@@ -150,7 +146,7 @@
               <span class="dropdown-arrow">&#9660;</span>
             </div>
           </div>
-          <button type="submit" class="confirm-btn">Confirmar</button>
+          <button type="submit" class="confirm-btn" onclick="bookLesson()">Confirmar</button>
         </form>
       </div>
     </div>

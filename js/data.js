@@ -28,6 +28,18 @@ class CartItem {
     }
 }
 
+class Class {
+    constructor(id, startTime, endTime, studentID, professorID, subject, lessonType){
+        this.id = id
+        this.startTime = startTime
+        this.endTime = endTime
+        this.studentID = studentID
+        this.professorID = professorID
+        this.subject = subject
+        this.lessonType = lessonType
+    }
+}
+
 let itemJoao1 = new CartItem(
     "1",
     "0",
@@ -167,3 +179,9 @@ let cart = [];
   }
   document.getElementById("nItems").innerHTML = cart.length;
   console.log(cart);
+
+let classes = [];
+if (localStorage.getItem('classes') !== null) {
+    classes = JSON.parse(localStorage.getItem('classes'));
+}
+console.log(classes);

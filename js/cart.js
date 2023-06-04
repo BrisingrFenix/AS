@@ -11,6 +11,22 @@ function addToCart(item) {
     }
 }
 
+function addClassToCart(lesson, price) {
+    // Push the item to the cart array
+    let item = new CartItem(
+        lesson.id,
+        lesson.professorID,
+        "Aula - " + professores[lesson.professorID].name,
+        lesson.subject + " / " + lesson.lessonType,
+        lesson.startTime.toISOString().split('T')[0] + "   " + lesson.startTime.toISOString().split('T')[1].split('.')[0],
+        price
+    )
+    cart.push(item);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById("nItems").innerHTML = cart.length;
+    console.log(cart.length);
+}
+
 function removeFromCart(id) {
     for (itemIdx in cart) {
         item = cart[itemIdx]
