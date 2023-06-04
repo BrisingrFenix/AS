@@ -1,6 +1,16 @@
 var searchRes = []
 var selectedSegmented = "Professores"
+var resProfHtml = ""
+var resMatHtml = ""
 function searchAndShow(){
+    resProfHtml = ""
+    resMatHtml = ""
+    document.getElementById("results").innerHTML = `
+        <div class="item-list" id="searchRes">
+
+        </div>
+        `
+    //Search Professores ------------------------------
     searchRes = []
     for(idx in professores){
         let prof = professores[idx] 
@@ -14,27 +24,66 @@ function searchAndShow(){
         }
      }
      console.log(searchRes);
-     
      count = 0
-     var resHtml = ""
      for(i in searchRes){
-         if (selectedSegmented == "Professores") {
-             resHtml = resHtml + `
-             <div class="item" onclick="selectProf('${searchRes[i].id}')">
-                 <img src="../images/${searchRes[i].image}.png" alt="Image 1" class="item-image">
-                 <p style="width: 100%; text-align: left; margin-left: 20px; margin-bottom: 0px; font-weight: bold;">${searchRes[i].name}</p>
-                 <p style="width: 100%; text-align: left; margin-left: 20px;margin-top: 0px;">${searchRes[i].bio.substring(0, 60)}...</p>
-             </div>
-             `
-         }
-     
-         if (selectedSegmented == "Materiais") {
-             resHtml = resHtml + `
-     
-             `
-         }
+       
+        resProfHtml = resProfHtml + `
+        <div class="item" onclick="selectProf('${searchRes[i].id}')">
+            <img src="../images/${searchRes[i].image}.png" alt="Image 1" class="item-image">
+            <p style="width: 100%; text-align: left; margin-left: 20px; margin-bottom: 0px; font-weight: bold;">${searchRes[i].name}</p>
+            <p style="width: 100%; text-align: left; margin-left: 20px;margin-top: 0px;">${searchRes[i].bio.substring(0, 60)}...</p>
+        </div>
+        `
      }
-     document.getElementById("searchRes").innerHTML = resHtml
+
+    //Search Materiais ------------------------------
+    searchRes = []
+    for(idx in materiais){
+        let mat = materiais[idx] 
+         let name = mat.name
+         if (name.includes(searchText)){
+            if(!searchRes.includes(mat)){
+                searchRes.push(mat)
+            }
+        }
+     }
+     console.log(searchRes);
+     count = 0
+     resMatHtml = resMatHtml + `
+        <div class="item-list" id="searchRes">
+    `
+     for(i in searchRes){
+        var li = parseInt(i)+1
+        console.log(li)
+        if(li%4 == 0){
+            console.log("OPEN")
+            resMatHtml = resMatHtml + `
+            <div class="item-list" id="searchRes" style="margin-top: 20px;">
+            `
+        }
+        resMatHtml = resMatHtml + `
+        <div class="item2" onclick="selectProf('${searchRes[i].authorId}')">
+            <p class="item-title">${searchRes[i].name}</p>
+            <p class="item-content">${searchRes[i].description.slice(0, 50)}...</p>
+        </div>
+        `
+        if(li%3 == 0){
+            resMatHtml = resMatHtml + `
+            </div>
+            `
+        }
+     }
+     resMatHtml = resMatHtml + `
+        </div>
+     `
+
+    if(selectedSegmented == "Professores"){
+        document.getElementById("searchRes").innerHTML = resProfHtml
+    }
+    if(selectedSegmented == "Materiais"){
+        document.getElementById("results").innerHTML = resMatHtml
+    }
+    
 }
 
 searchAndShow()
@@ -66,3 +115,34 @@ function selectProf(id){
     window.location.href = "./professor.html"
 }
 
+
+`
+<div id="results">
+    <div class="item-list" id="searchRes">
+        <div class="item2">
+            <p class="item-title">Solução exame matemática A 20/21</p>
+            <p class="item-content">{searchRes[i].description}</p>
+        </div>
+
+        <div class="item2">
+            <p class="item-title">Solução exame matemática A 22/23</p>
+            <p class="item-content">{searchRes[i].description}</p>
+        </div>
+
+        <div class="item2">
+            <p class="item-title">Ficha ex. Inequações (solução)</p>
+            <p class="item-content">{searchRes[i].description}</p>
+        </div>
+    </div>
+    <div class="item-list">
+        <div class="item2">
+            <p class="item-title">Ficha ex. Limites (solução)</p>
+            <p class="item-content">{searchRes[i].description}</p>
+        </div>
+        <div class="item2">
+            <p class="item-title">Video-aula sobre funções</p>
+            <p class="item-content">{searchRes[i].description}</p>
+        </div>
+    </div>
+</div>
+`
