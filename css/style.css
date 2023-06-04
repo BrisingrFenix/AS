@@ -6,14 +6,14 @@ body {
 }
 
 footer {
+  width: 100%;
   background-color: black;
   color: white;
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
+  margin: 0px 200px 20px;
 }
 
 .footer-section {
@@ -39,11 +39,11 @@ footer {
 .about-us-image {
   flex: 0 0 50%;
   /* Adjust the width as needed */
-  padding-right: 20px;
-  /* Add spacing between image and text */
 }
 
 .about-us-image img {
+  min-width: 200px;
+  /* COLOCAR RESOLUÇAO A MUDAR ENTRE MIN E MAX*/
   max-height: 300px;
   /* Set the maximum height to 200px */
   width: auto;
@@ -51,6 +51,7 @@ footer {
 }
 
 .about-us-text {
+  padding: 40px;
   flex: 0 0 50%;
   /* Adjust the width as needed */
 }
@@ -90,7 +91,6 @@ footer {
 }
 
 .search-form {
-  margin-left: auto;
   display: flex;
 }
 
@@ -142,7 +142,7 @@ footer {
 }
 
 .content {
-  margin: 95px 200px 200px;
+  margin: 95px 200px 50px;
 }
 
 .section-title {
@@ -164,8 +164,9 @@ footer {
 
 .segmented-control-item {
   background-color: #f8f8f8;
+  margin-right: 10px;
   border: none;
-  border-right: 1px solid #ccc;
+  border-radius: 15px;
   padding: 10px 15px;
   font-size: 16px;
   color: #333;
@@ -177,7 +178,8 @@ footer {
 }
 
 .segmented-control-item.selected {
-  border: 2px solid #000;
+  border: 2px solid #6C63FF;
+  font-weight: 700;
 }
 
 .item-list {
@@ -186,8 +188,8 @@ footer {
 }
 
 .item {
-  width: 310px;
-  height: 200px;
+  width: 360px;
+  height: 250px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -206,7 +208,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 20px 20px;
 }
 
 .item-image {
