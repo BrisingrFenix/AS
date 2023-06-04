@@ -42,8 +42,6 @@ footer {
 }
 
 .about-us-image img {
-  min-width: 200px;
-  /* COLOCAR RESOLUÇAO A MUDAR ENTRE MIN E MAX*/
   max-height: 300px;
   /* Set the maximum height to 200px */
   width: auto;
