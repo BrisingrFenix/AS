@@ -1,10 +1,41 @@
 var duracao = 0
 var lessonType = ""
-function bookLesson(){
 
+function bookLesson(){
   const startTime = new Date(document.getElementById('datetime').value)
   const endTime = new Date(startTime)
   endTime.setHours(endTime.getHours() + parseInt(duracao))
+  console.log("TRY")
+  console.log(classes)
+  for (idx in classes){
+    const c = classes[idx]
+    const c_s = new Date(c.startTime)
+    const c_e = new Date(c.endTime)
+    console.log("-------")
+    console.log(c_s)
+    console.log(c_e)
+    console.log("SEPARATE")
+    console.log(startTime)
+    console.log(endTime)
+    console.log("-------")
+    if(classes[idx].professorID == selectedProf){
+      // Check for overlap
+      if (c_s < endTime && c_e > startTime) {
+        console.log('THERE IS AN OVERLAP');
+        alert("Date already taken")
+        return
+      } else if (c_s <= startTime && c_e >= endTime) {
+        console.log('THERE IS AN OVERLAP');
+        alert("Date already taken")
+        return
+      } else if (startTime <= c_e && endTime >= c_s) {
+        console.log('THERE IS AN OVERLAP');
+        alert("Date already taken")
+        return
+      }
+    }
+  }
+
   const lesson = new Class(
     "1",
     startTime,
@@ -14,14 +45,12 @@ function bookLesson(){
     document.getElementById("subjectSelect").textContent.trim(),
     identifyLessonType(lessonType)
   )
-  console.log(lesson)
   let price = duracao * professores[selectedProf].pricePerHour
 
   addClassToCart(lesson, price)
 
   classes.push(lesson)
   localStorage.setItem('classes', JSON.stringify(classes));
-  console.log(classes);
 }
 
 function identifyLessonType(str) {
@@ -69,8 +98,7 @@ function selectOption(option, dropdownId) {
     lessonType = document.getElementById('dropdown-text-4').textContent
   }
 
-  console.log(professores);
-  console.log(selectedProf)
+
   document.getElementById("profName").innerHTML = professores[selectedProf].name
   document.getElementById("profAcademy").innerHTML = professores[selectedProf].academicLevel
   document.getElementById("profImage").innerHTML = `<img style="width: 370px; height: 280px" src="../images/${professores[selectedProf].image}.png" alt="Profile Image">`
