@@ -14,6 +14,7 @@ function addToCart(item) {
 function addClassToCart(lesson, price) {
     // Push the item to the cart array
     let item = new CartItem(
+        0,
         lesson.id,
         lesson.professorID,
         "Aula - " + professores[lesson.professorID].name,
