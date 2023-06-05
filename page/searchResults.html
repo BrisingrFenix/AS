@@ -25,26 +25,17 @@
       <button class="segmented-control-item" onclick="toggleSelected(this)">Disciplinas</button>
 
       <div class="dropdown">
-        <button class="dropdown-button">Order by: Classification</button>
+        <button class="dropdown-button" id="dropdown-button">Order by: Random</button>
         <div class="dropdown-content">
-            <a href="#">Item 1</a>
-            <a href="#">Item 2</a>
-            <a href="#">Item 3</a>
+          <a href="#" onclick="selectItem('Random')">Random</a>
+          <a href="#" onclick="selectItem('Best Reviewed')">Best Reviewed</a>
+          <a href="#" onclick="selectItem('Cheapest')">Cheapest</a>
         </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropdown-button">Filters</button>
-        <div class="dropdown-content">
-            <a href="#">Item 1</a>
-            <a href="#">Item 2</a>
-            <a href="#">Item 3</a>
-        </div>
-      </div>
+      </div>      
     </div>
 
     <div id="results">
         <div class="item-list" id="searchRes">
-
         </div>
         </div>
         <div class="pagination">

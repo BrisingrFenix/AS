@@ -2,7 +2,20 @@ var searchRes = []
 var selectedSegmented = "Professores"
 var resProfHtml = ""
 var resMatHtml = ""
-function searchAndShow(){
+
+function compareByAvgRatingsDescending(a, b) {
+    return b.avgRatings - a.avgRatings;
+}
+
+function compareByPricePerHourAscending(a, b) {
+    return a.pricePerHour - b.pricePerHour;
+  }
+
+  function compareByPriceAscending(a, b) {
+    return a.price - b.price;
+  }
+
+function searchAndShow(order){
     resProfHtml = ""
     resMatHtml = ""
     document.getElementById("results").innerHTML = `
@@ -22,19 +35,26 @@ function searchAndShow(){
             }
          }
         }
-     }
-     console.log(searchRes);
-     count = 0
-     for(i in searchRes){
-       
+    }
+
+    if(order == "Best Reviewed"){
+        searchRes.sort(compareByAvgRatingsDescending);
+    }
+    if(order == "Cheapest"){
+        searchRes.sort(compareByPricePerHourAscending);
+    }
+
+    console.log(searchRes);
+    count = 0
+    for(i in searchRes){
         resProfHtml = resProfHtml + `
         <div class="item" onclick="selectProf('${searchRes[i].id}')">
             <img src="../images/${searchRes[i].image}.png" alt="Image 1" class="item-image">
-            <p style="width: 100%; text-align: left; margin-left: 20px; margin-bottom: 0px; font-weight: bold;">${searchRes[i].name}</p>
+            <p style="width: 100%; text-align: left; margin-left: 20px; margin-bottom: 0px; font-weight: bold;">${searchRes[i].name} - ${searchRes[i].avgRatings} - ${searchRes[i].pricePerHour}€</p>
             <p style="width: 100%; text-align: left; margin-left: 20px;margin-top: 0px;">${searchRes[i].bio.substring(0, 60)}...</p>
         </div>
         `
-     }
+    }
 
     //Search Materiais ------------------------------
     searchRes = []
@@ -47,6 +67,14 @@ function searchAndShow(){
             }
         }
      }
+
+    if(order == "Best Reviewed"){
+        searchRes.sort(compareByAvgRatingsDescending);
+    }
+    if(order == "Cheapest"){
+        searchRes.sort(compareByPriceAscending);
+    }
+
      console.log(searchRes);
      count = 0
      resMatHtml = resMatHtml + `
@@ -54,9 +82,7 @@ function searchAndShow(){
     `
      for(i in searchRes){
         var li = parseInt(i)+1
-        console.log(li)
         if(li%4 == 0){
-            console.log("OPEN")
             resMatHtml = resMatHtml + `
             <div class="item-list" id="searchRes" style="margin-top: 20px;">
             `
@@ -64,7 +90,8 @@ function searchAndShow(){
         resMatHtml = resMatHtml + `
         <div class="item2" onclick="selectProf('${searchRes[i].authorId}')">
             <p class="item-title">${searchRes[i].name}</p>
-            <p class="item-content">${searchRes[i].description.slice(0, 50)}...</p>
+            <p style="width: 100%; text-align: left; margin-left: 20px; margin-bottom: 0px; font-weight: bold;">${searchRes[i].avgRatings} - ${searchRes[i].price}€</p>
+            <p style="width: 100%; text-align: left; margin-left: 20px;margin-top: 0px;">${searchRes[i].description.slice(0, 50)}...</p>
         </div>
         `
         if(li%3 == 0){
@@ -115,34 +142,20 @@ function selectProf(id){
     window.location.href = "./professor.html"
 }
 
+function selectItem(itemText) {
+    const dropdownButton = document.getElementById('dropdown-button');
+    dropdownButton.textContent = 'Order by: ' + itemText;
 
-`
-<div id="results">
-    <div class="item-list" id="searchRes">
-        <div class="item2">
-            <p class="item-title">Solução exame matemática A 20/21</p>
-            <p class="item-content">{searchRes[i].description}</p>
-        </div>
-
-        <div class="item2">
-            <p class="item-title">Solução exame matemática A 22/23</p>
-            <p class="item-content">{searchRes[i].description}</p>
-        </div>
-
-        <div class="item2">
-            <p class="item-title">Ficha ex. Inequações (solução)</p>
-            <p class="item-content">{searchRes[i].description}</p>
-        </div>
-    </div>
-    <div class="item-list">
-        <div class="item2">
-            <p class="item-title">Ficha ex. Limites (solução)</p>
-            <p class="item-content">{searchRes[i].description}</p>
-        </div>
-        <div class="item2">
-            <p class="item-title">Video-aula sobre funções</p>
-            <p class="item-content">{searchRes[i].description}</p>
-        </div>
-    </div>
-</div>
-`
+    if(itemText == "Random"){
+        console.log("RANDOM")
+        searchAndShow()
+    }
+    if(itemText == "Best Reviewed"){
+        console.log("BEST")
+        searchAndShow("Best Reviewed")
+    }
+    if(itemText == "Cheapest"){
+        console.log("BEST")
+        searchAndShow("Cheapest")
+    }
+}

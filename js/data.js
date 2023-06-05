@@ -18,7 +18,8 @@ class Professor {
 }
 
 class CartItem {
-    constructor(id, authorId, name, authorFormat, description, price){
+    constructor(avgRatings, id, authorId, name, authorFormat, description, price){
+        this.avgRatings = avgRatings
         this.id = id
         this.authorId = authorId
         this.name = name
@@ -41,6 +42,7 @@ class Class {
 }
 
 let itemJoao1 = new CartItem(
+    3.5,
     "1",
     "0",
     "Solução exame matemática A 20/21",
@@ -49,6 +51,7 @@ let itemJoao1 = new CartItem(
     "15"
 )
 let itemJoao2 = new CartItem(
+    4.6,
     "2",
     "0",
     "Solução exame matemática A 22/23",
@@ -57,6 +60,7 @@ let itemJoao2 = new CartItem(
     "20"
 )
 let itemJoao3 = new CartItem(
+    4.95,
     "3",
     "0",
     "Ficha ex. Inequações (solução)",
@@ -65,6 +69,7 @@ let itemJoao3 = new CartItem(
     "7"
 )
 let itemMaria1 = new CartItem(
+    4.0,
     "4",
     "1",
     "Ficha ex. Limites (solução)",
@@ -73,6 +78,7 @@ let itemMaria1 = new CartItem(
     "10"
 )
 let itemSusana1 = new CartItem(
+    4.2,
     "5",
     "2",
     "Video-aula sobre funções",
@@ -101,7 +107,7 @@ const LessonType = {
 };
 
 let profJoaoPedro = new Professor( "João Pedro",
-                               4.95,
+                               4.7,
                                ["Matemática A", "Física"],
                                "12/03/2020",
                                Status.APPROVED,
@@ -117,7 +123,7 @@ let profJoaoPedro = new Professor( "João Pedro",
                             )
 
 let profMariaHelena = new Professor( "Maria Helena",
-                            4.75,
+                            4.95,
                             ["Matemática A"],
                             "21/03/2010",
                             Status.APPROVED,
