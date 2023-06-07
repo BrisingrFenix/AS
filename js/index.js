@@ -8,7 +8,7 @@ for (var i = 0; i < 3; i++) {
         </div>
     `
 }
-document.getElementById("professoreList").innerHTML =  profHTML
+document.getElementById("professoreList").innerHTML = profHTML
 
 var matHtml = ""
 for (var i = 0; i < 3; i++) {
@@ -20,9 +20,9 @@ for (var i = 0; i < 3; i++) {
         </div>
     `
 }
-document.getElementById("materiaisList").innerHTML =  matHtml
+document.getElementById("materiaisList").innerHTML = matHtml
 
-function selectProf(id){
+function selectProf(id) {
     selectedProf = id
     localStorage.setItem('selectedProf', JSON.stringify(selectedProf));
     window.location.href = "./page/professor.html"
@@ -32,10 +32,9 @@ function toggleSelected(button) {
     // Remove "selected" class from all buttons
     var buttons = document.getElementsByClassName("segmented-control-item");
     for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove("selected");
+        buttons[i].classList.remove("selected");
     }
-  
+
     // Add "selected" class to the clicked button
     button.classList.add("selected");
-  }
-  
+}

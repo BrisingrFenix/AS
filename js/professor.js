@@ -1,13 +1,13 @@
 var duracao = 0
 var lessonType = ""
 
-function bookLesson(){
+function bookLesson() {
   const startTime = new Date(document.getElementById('datetime').value)
   const endTime = new Date(startTime)
   endTime.setHours(endTime.getHours() + parseInt(duracao))
   console.log("TRY")
   console.log(classes)
-  for (idx in classes){
+  for (idx in classes) {
     const c = classes[idx]
     const c_s = new Date(c.startTime)
     const c_e = new Date(c.endTime)
@@ -18,7 +18,7 @@ function bookLesson(){
     console.log(startTime)
     console.log(endTime)
     console.log("-------")
-    if(classes[idx].professorID == selectedProf){
+    if (classes[idx].professorID == selectedProf) {
       // Check for overlap
       if (c_s < endTime && c_e > startTime) {
         console.log('THERE IS AN OVERLAP');
@@ -87,60 +87,60 @@ function closePopup() {
   popupOverlay.style.display = 'none';
 }
 
-popupForm.addEventListener('submit', function(event) {
+popupForm.addEventListener('submit', function (event) {
   event.preventDefault();
   closePopup();
 });
-  
+
 function selectOption(option, dropdownId) {
-    document.getElementById(dropdownId).textContent = option;
-    duracao = document.getElementById("dropdown-text-2").textContent[0]
-    lessonType = document.getElementById('dropdown-text-4').textContent
-  }
+  document.getElementById(dropdownId).textContent = option;
+  duracao = document.getElementById("dropdown-text-2").textContent[0]
+  lessonType = document.getElementById('dropdown-text-4').textContent
+}
 
 
-  document.getElementById("profName").innerHTML = professores[selectedProf].name
-  document.getElementById("profAcademy").innerHTML = professores[selectedProf].academicLevel
-  document.getElementById("profImage").innerHTML = `<img style="width: 370px; height: 280px" src="../images/${professores[selectedProf].image}.png" alt="Profile Image">`
+document.getElementById("profName").innerHTML = professores[selectedProf].name
+document.getElementById("profAcademy").innerHTML = professores[selectedProf].academicLevel
+document.getElementById("profImage").innerHTML = `<img style="width: 370px; height: 280px" src="../images/${professores[selectedProf].image}.png" alt="Profile Image">`
 
-  document.getElementById("profPreco").innerHTML = `Preço: ${professores[selectedProf].pricePerHour},00€`
-  document.getElementById("profModalidade").innerHTML = `Atende: ${professores[selectedProf].lessonType}`
-  document.getElementById("profAcademic").innerHTML = `Habilitações Académicas: ${professores[selectedProf].academicLevel}`
-  document.getElementById("profRating").innerHTML = `Avaliações: ${professores[selectedProf].avgRatings}`
+document.getElementById("profPreco").innerHTML = `Preço: ${professores[selectedProf].pricePerHour},00€`
+document.getElementById("profModalidade").innerHTML = `Atende: ${professores[selectedProf].lessonType}`
+document.getElementById("profAcademic").innerHTML = `Habilitações Académicas: ${professores[selectedProf].academicLevel}`
+document.getElementById("profRating").innerHTML = `Avaliações: ${professores[selectedProf].avgRatings}`
 
-  document.getElementById("popupProfNome").innerHTML = professores[selectedProf].name
-  subHtml = ""
-  for (subIdx in professores[selectedProf].subjects) {
-    subHtml = subHtml + `
+document.getElementById("popupProfNome").innerHTML = professores[selectedProf].name
+subHtml = ""
+for (subIdx in professores[selectedProf].subjects) {
+  subHtml = subHtml + `
       <div class="dropdown-option" onclick="selectOption('${professores[selectedProf].subjects[subIdx]}', 'dropdown-text-1')">${professores[selectedProf].subjects[subIdx]}</div>
     `
-  }
-  document.getElementById("subjectSelect").innerHTML = subHtml
+}
+document.getElementById("subjectSelect").innerHTML = subHtml
 
-  horaHtml = ""
-  for (var i = 1; i <= 5; i++) {
-    horaHtml = horaHtml + `
+horaHtml = ""
+for (var i = 1; i <= 5; i++) {
+  horaHtml = horaHtml + `
       <div class="dropdown-option" onclick="selectOption('${i} hora', 'dropdown-text-2')">${i} hora</div>
     `
-  }
-  document.getElementById("duracaoSelect").innerHTML = horaHtml
-  
-  modalidadeHtml = ""
-  for (subIdx in professores[selectedProf].lessonType) {
-    modalidadeHtml = modalidadeHtml + `
+}
+document.getElementById("duracaoSelect").innerHTML = horaHtml
+
+modalidadeHtml = ""
+for (subIdx in professores[selectedProf].lessonType) {
+  modalidadeHtml = modalidadeHtml + `
       <div class="dropdown-option" onclick="selectOption('${professores[selectedProf].lessonType[subIdx]}', 'dropdown-text-4')">${professores[selectedProf].lessonType[subIdx]}</div>
     `
-  }
-  document.getElementById("modalidadeSelect").innerHTML = modalidadeHtml  
-  
+}
+document.getElementById("modalidadeSelect").innerHTML = modalidadeHtml
+
 materialHtml = ""
 materiaisProf = []
-for(i in materiais){
-  if(materiais[i].authorId == selectedProf){
+for (i in materiais) {
+  if (materiais[i].authorId == selectedProf) {
     materiaisProf.push(materiais[i])
   }
 }
-for(i in materiaisProf){
+for (i in materiaisProf) {
   materialHtml = materialHtml + `
       <div class="item-material">
         <div class="item-title-material">${materiaisProf[i].name}</div>
@@ -149,8 +149,8 @@ for(i in materiaisProf){
             <p class="item-text-material">${materiaisProf[i].description}</p>
           </div>
           <div class="item-buttons-material">
-            <button class="button-preview">Preview</button>
-            <button class="button-material" onclick="addToCart('${materiaisProf[i].id}')">Add</button>
+            <button class="button-preview"></button>
+            <button class="button-material" onclick="addToCart('${materiaisProf[i].id}')"></button>
           </div>
       </div>
     `
