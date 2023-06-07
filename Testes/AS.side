@@ -1,0 +1,420 @@
+{
+  "id": "abd7938b-482c-435a-bc2a-51d75142af96",
+  "version": "2.0",
+  "name": "AS",
+  "url": "https://brisingrfenix.github.io/AS/",
+  "tests": [{
+    "id": "977360e8-17a7-4e59-a2ed-b57e0bc08660",
+    "name": "Compra - nao encontra materiais",
+    "commands": [{
+      "id": "baabecfd-3e32-45fb-bbf6-5b228fa4b955",
+      "comment": "",
+      "command": "open",
+      "target": "https://brisingrfenix.github.io/AS/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "931f027d-bc47-4605-aaea-af909ea4f35d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "099ed582-718c-4801-aad9-43a902a206fb",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86a55f68-ef30-4132-bed2-cabaf6e4c34d",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "xyz"
+    }, {
+      "id": "7d0dd31d-4124-4a6d-acc1-e07339a255d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.search-button > img",
+      "targets": [
+        ["css=.search-button > img", "css:finder"],
+        ["xpath=//button/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f7bc666-19a7-4fe9-a2ec-47c45f81184b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.segmented-control-item:nth-child(2)",
+      "targets": [
+        ["css=.segmented-control-item:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@onclick='toggleSelected(this)'])[2]", "xpath:attributes"],
+        ["xpath=//div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Materiais')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c9d2b7f-7fbe-4c5d-ba30-08096ea28ecb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.segmented-control-item:nth-child(3)",
+      "targets": [
+        ["css=.segmented-control-item:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@onclick='toggleSelected(this)'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Disciplinas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcf347fb-bc4e-4c1a-bffc-022c739cc464",
+      "comment": "",
+      "command": "click",
+      "target": "css=.segmented-control-item:nth-child(1)",
+      "targets": [
+        ["css=.segmented-control-item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@onclick='toggleSelected(this)']", "xpath:attributes"],
+        ["xpath=//div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Professores')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "80d9f00c-6969-47f5-9409-1e2cafcfb41d",
+    "name": "Marcação sem sucesso",
+    "commands": [{
+      "id": "93c63ac7-cb3b-427a-9458-92004b8285c4",
+      "comment": "",
+      "command": "open",
+      "target": "https://brisingrfenix.github.io/AS/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00f6060a-cdb4-49fb-8524-2483522c1bf3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4d418cd-36c9-4cf4-9173-e9c9507593ef",
+      "comment": "",
+      "command": "click",
+      "target": "css=.item:nth-child(2) > .item-image",
+      "targets": [
+        ["css=.item:nth-child(2) > .item-image", "css:finder"],
+        ["xpath=(//img[@alt='Image 1'])[2]", "xpath:img"],
+        ["xpath=//div[@id='professoreList']/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1f3685b-53c6-43c0-ab2c-bf82021791a8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(2)",
+      "targets": [
+        ["css=.button:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='openPopup()']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Marcar aula')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0775c782-7b4f-4534-bf40-7565292c253e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#subjectSelect > .dropdown-option",
+      "targets": [
+        ["css=#subjectSelect > .dropdown-option", "css:finder"],
+        ["xpath=//div[@onclick=\"selectOption('Matemática A', 'dropdown-text-1')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='subjectSelect']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6761039c-a673-4158-a0eb-97a00f584c37",
+      "comment": "",
+      "command": "click",
+      "target": "css=#duracaoSelect > .dropdown-option:nth-child(1)",
+      "targets": [
+        ["css=#duracaoSelect > .dropdown-option:nth-child(1)", "css:finder"],
+        ["xpath=//div[@onclick=\"selectOption('1 hora', 'dropdown-text-2')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='duracaoSelect']/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28e6ec78-75b6-4194-9190-377335b8c709",
+      "comment": "",
+      "command": "click",
+      "target": "id=datetime",
+      "targets": [
+        ["id=datetime", "id"],
+        ["name=datetime", "name"],
+        ["css=#datetime", "css:finder"],
+        ["xpath=//input[@id='datetime']", "xpath:attributes"],
+        ["xpath=//form[@id='popup-form']/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1eaa3a01-99de-4bb7-803f-5344ad0ec22a",
+      "comment": "",
+      "command": "click",
+      "target": "id=datetime",
+      "targets": [
+        ["id=datetime", "id"],
+        ["name=datetime", "name"],
+        ["css=#datetime", "css:finder"],
+        ["xpath=//input[@id='datetime']", "xpath:attributes"],
+        ["xpath=//form[@id='popup-form']/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7e09241-1a94-4968-b959-2e28191a0e4a",
+      "comment": "",
+      "command": "type",
+      "target": "id=datetime",
+      "targets": [
+        ["id=datetime", "id"],
+        ["name=datetime", "name"],
+        ["css=#datetime", "css:finder"],
+        ["xpath=//input[@id='datetime']", "xpath:attributes"],
+        ["xpath=//form[@id='popup-form']/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "2023-06-23T10:00"
+    }, {
+      "id": "6e2c29ec-a8eb-4b18-83ff-cdfe89458e55",
+      "comment": "",
+      "command": "click",
+      "target": "css=.popup-container",
+      "targets": [
+        ["css=.popup-container", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35616ca1-1371-44a6-8b9e-96c39a697ff9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalidadeSelect > .dropdown-option:nth-child(1)",
+      "targets": [
+        ["css=#modalidadeSelect > .dropdown-option:nth-child(1)", "css:finder"],
+        ["xpath=//div[@onclick=\"selectOption('Online', 'dropdown-text-4')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='modalidadeSelect']/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbbdca67-c6f4-4be6-81f0-c1a09a19d9f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.confirm-btn",
+      "targets": [
+        ["css=.confirm-btn", "css:finder"],
+        ["xpath=//button[@onclick='bookLesson()']", "xpath:attributes"],
+        ["xpath=//form[@id='popup-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirmar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "264ea990-b0eb-472f-88e4-fcc24dbf9938",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Date already taken",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "67065bdb-c1ea-4aa1-bda0-1a26e2a24d31",
+    "name": "Compra com sucesso por pesquisa",
+    "commands": [{
+      "id": "2eef5f97-55e5-4ae8-81d9-22eac0637158",
+      "comment": "",
+      "command": "open",
+      "target": "https://brisingrfenix.github.io/AS/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e942620f-f248-4670-9b7b-e7170fec2d2e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94cf9058-f64f-405c-b032-de277d080d72",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "601c0fe1-b694-4cf8-b9dc-ccafb8ee013b",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "matemática"
+    }, {
+      "id": "b62989ae-0ec0-4f7e-a0b2-c40b90b43cb5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.search-button",
+      "targets": [
+        ["css=.search-button", "css:finder"],
+        ["xpath=//button[@onclick=\"searchNoIndex('page/searchResults.html')\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57e7183d-ec6d-4e13-a469-db87a89202b0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.segmented-control-item:nth-child(2)",
+      "targets": [
+        ["css=.segmented-control-item:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@onclick='toggleSelected(this)'])[2]", "xpath:attributes"],
+        ["xpath=//div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Materiais')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd96e126-700e-4e5a-b9f2-39ddbf93fb70",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Best Reviewed",
+      "targets": [
+        ["linkText=Best Reviewed", "linkText"],
+        ["css=.dropdown-content > a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Best Reviewed')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"selectItem('Best Reviewed')\"]", "xpath:attributes"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Best Reviewed')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "120f627f-4fd8-4c73-abee-f23b6e66aefd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.item2:nth-child(1)",
+      "targets": [
+        ["css=.item2:nth-child(1)", "css:finder"],
+        ["xpath=//div[@onclick=\"selectProf('0')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='searchRes']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a104bee-2879-42a3-8a87-a7d7212c424a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.item-material:nth-child(1) .button-material",
+      "targets": [
+        ["css=.item-material:nth-child(1) .button-material", "css:finder"],
+        ["xpath=//button[@onclick=\"addToCart('1')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='materialList']/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "163cddab-f96a-4664-90c3-cf6e1b150b9e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cart-button > img",
+      "targets": [
+        ["css=.cart-button > img", "css:finder"],
+        ["xpath=//button[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "940a0679-81a2-415e-80f7-30f859cd3736",
+      "comment": "",
+      "command": "click",
+      "target": "css=.custom-button",
+      "targets": [
+        ["css=.custom-button", "css:finder"],
+        ["xpath=//button[@onclick='openPopup()']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Prosseguir para pagamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d26c8fc-b2eb-4188-a8bb-d0a69cd4ec04",
+      "comment": "",
+      "command": "click",
+      "target": "name=phone",
+      "targets": [
+        ["name=phone", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='phone']", "xpath:attributes"],
+        ["xpath=//form[@id='popup-form']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0a1452c-56de-4000-b49c-b07c4d80d147",
+      "comment": "",
+      "command": "type",
+      "target": "name=phone",
+      "targets": [
+        ["name=phone", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='phone']", "xpath:attributes"],
+        ["xpath=//form[@id='popup-form']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "9111134562"
+    }, {
+      "id": "6f26e4d5-9111-4346-bd13-f1e3fcbc1573",
+      "comment": "",
+      "command": "click",
+      "target": "css=.confirm-btn",
+      "targets": [
+        ["css=.confirm-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='popup-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirmar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b9f6d9d9-1163-426c-8946-1415bfbb9918",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://brisingrfenix.github.io/", "https://brisingrfenix.github.io/AS/"],
+  "plugins": []
+}
